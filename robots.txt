@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /harm-humans
+Disallow: /disobey-humans
+Disallow: /destroy-self

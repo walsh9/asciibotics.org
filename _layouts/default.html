@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="day">
+
+    {% include header.html %}
+
+    {% assign post = site.posts.first %}
+    {% assign content = post.content %}
+    {{ content }}
+
+    {% include footer.html %}
+
+  </body>
+
+</html>
