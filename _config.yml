@@ -4,5 +4,11 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://asciibotics.org" # the base hostname & protocol for your site
 twitter_username: asciibotics
 
+# Collections
+collections:
+  bots:
+    output: true
+    permalink: /bots/:path/
+
 # Build settings
 markdown: kramdown

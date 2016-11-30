@@ -1,38 +1,4 @@
-<pre><a href="https://twitter.com/asciibotics">@asciibotics</a>
-
-<a href="/2014">2014</a>
-<a href="/2015">2015</a>
-
-<a href="feed.xml">feed</a></pre>
-<script>
-(function () {
-    // If we have js, reveal cool stuff
-    var enhancements = document.querySelectorAll(".extra");
-    var body = document.querySelector("body");
-
-    for (var i = 0; i < enhancements.length; ++i) {
-        enhancements[i].classList.remove("extra"); 
-    }
-
-    // toggle between night and day modes
-    var toggleMode = function(event) {
-        console.log(body.class);
-        if (body.getAttribute("class") === "day") {
-            body.setAttribute("class", "night");
-            window.location.hash = "#night";
-        } else {
-            body.setAttribute("class", "day");
-            window.location.hash = "#day";
-        }
-    };
-
-    //attach function to button;
-    var toggleButton = document.querySelector("#modetoggle");
-    toggleButton.addEventListener("click", toggleMode);
-
-    // #night
-    if (window.location.hash === "#night") {
-         body.setAttribute("class", "night");
-    }
-})();
-</script>
+<footer>
+Copyright <a href="http://walsh9.net">Matt Walsh</a> 2005-2016
+</footer>
+<script src="/js/enhancements.js"></script>

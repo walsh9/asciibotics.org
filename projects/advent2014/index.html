@@ -1,88 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ASCIIBOT ADVENT CALENDAR 2014</title>
-</head>
-<style type="text/css">
-html {
-    font-size: 62.5%;
-}
-pre { 
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    font-size: 1.6rem;
-}
-a {
-    text-decoration: none;
-    border-radius: 3px;
-    color: #B58900;
-}
-button {
-    color: #B58900;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    width: 3.5rem;
-    height: 3.5rem;
-    border: none;
-    background: none;
-    padding: 0px;
-    display: inline;
-    margin: 0;
-    font: inherit;
-    outline: none;
-    outline-offset: 0;
-    position: fixed;
-    top: 10px;
-    right: 25px;
-    font-size: 25px;
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-body.day {
-    background: #FDF6E3;
-    color: #657B83;
-    transition: all 0.3s ease-out;
-}
-.day a:hover {
-    background-color: #eee8d5;
-}
-.day button:hover {
-    background-color: #eee8d5;
-}
-.day #modetoggle:after {
-    content: "☀";
-}
-
-body.night {
-    background:#002b36;
-    color: #839496;
-    transition: all 0.3s ease-out;
-}
-
-.night a:hover {
-    background-color: #073642;
-}
-.night button:hover {
-    background-color: #073642;
-}
-.night #modetoggle:after {
-    content: "☽";
-}
-
-.extra {
-    display: none!important;
-}
-
-
-</style>
-<body class="day">
-<button type="button" id="modetoggle" class="extra"></button>
-    <pre>
-                        ASCIIBOT ADVENT CALENDAR 2014                           
+---
+layout: default
+---
+<div class="projectbox">
+<h2>ASCIIBOT ADVENT CALENDAR 2014</h2>
+<pre>
  ______________________________________________________________________________ 
 | AD001    FLOTZEN | AD002   TROBESTON | AD003        COLE | AD004        FIDO |
 |==================|===================|===================|===========|\|\====|
@@ -95,7 +16,7 @@ body.night {
 |:|..[_______:]....|.("\.}={...}={./").|......_\_/_........|..../.|...\.\....| |
 |:/ (_) (_) (_)    |     /_\   /_\     |     ()_))_)       |   /_ |_   \,\,  \ |
 |/_________________|___________________|___________________|__________________\|
-| AD005     PYLIEX | AD006      PRESTA | AD007      PROTON | AD008        VREK |
+| AD005     PYLIEX | AD006      PRESTA | AD007      PROTOM | AD008        VREK |
 |==================|===================|===================|===================|
 |:|              c |                   |        _._        |                 | |
 |:|     7____7  (  |    ,.   _(`       |       /.=.\       |                 | |
@@ -136,7 +57,7 @@ body.night {
 |:|   ()|___|()    |   o.-'/._.\`-.o   |    |.o'[][][|     |   o)_|o o|_(o   | |
 |:| _() |\_/| ()_  |  //  |.__:.|  \\  |    `()======'     |  /|._| - |_.|\  | |
 |:|  /  () ()  \   | ( )  |.__:.|  ( ) |      \\    \\     | ( '._|___|_.' ) | |
-|:|...._()..()_....|......|_| |_|......|......().....()....|..M./_|_|_|_\.M..| |
+|:|...._()..()_....|......|_|.|_|......|......().....()....|..M./_|_|_|_\.M..| |
 |:/   (_(|  |)_)   |      /_\ /_\      |     /._     /._   |   /_//|_|\\_\   \ |
 |/_________________|___________________|___________________|__________________\|
 | AD021      BISBY | AD022  SPOTSWORTH | AD025                        ABOMINUS |
@@ -161,45 +82,5 @@ body.night {
 |:|0.....00......0.|........\|/......| |:|..........,"_ "_\ /_" _"...........| |
 |:/_\    _\\_   /_ |       /_|_\     \ |:/         /_____(o|o)_____\         \ |
 |/_________________|__________________\|/_____________________________________\|
-                                                                   
 </pre>
-<pre><a href="https://twitter.com/asciibotics">@asciibotics</a>
-
-<a href="/2015">2015</a>
-<a href="/">2016</a>
-
-<a href="feed.xml">feed</a></pre>
-<script>
-(function () {
-    // If we have js, reveal cool stuff
-    var enhancements = document.querySelectorAll(".extra");
-    var body = document.querySelector("body");
-
-    for (var i = 0; i < enhancements.length; ++i) {
-        enhancements[i].classList.remove("extra"); 
-    }
-
-    // toggle between night and day modes
-    var toggleMode = function(event) {
-        console.log(body.class);
-        if (body.getAttribute("class") === "day") {
-            body.setAttribute("class", "night");
-            window.location.hash = "#night";
-        } else {
-            body.setAttribute("class", "day");
-            window.location.hash = "#day";
-        }
-    };
-
-    //attach function to button;
-    var toggleButton = document.querySelector("#modetoggle");
-    toggleButton.addEventListener("click", toggleMode);
-
-    // #night
-    if (window.location.hash === "#night") {
-         body.setAttribute("class", "night");
-    }
-})();
-</script>
-</body>
-</html>
+</div>
