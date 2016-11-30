@@ -1,6 +1,7 @@
 <pre><a href="https://twitter.com/asciibotics">@asciibotics</a>
 
 <a href="/2014">2014</a>
+<a href="/2015">2015</a>
 
 <a href="feed.xml">feed</a></pre>
 <script>
@@ -18,7 +19,7 @@
         console.log(body.class);
         if (body.getAttribute("class") === "day") {
             body.setAttribute("class", "night");
-            window.location.hash = "#night"
+            window.location.hash = "#night";
         } else {
             body.setAttribute("class", "day");
             window.location.hash = "#day";
