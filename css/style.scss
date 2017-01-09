@@ -1,0 +1,366 @@
+---
+---
+/* reset */
+html, body, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
+
+li { list-style: none; }
+
+/* border box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+/* Layout */
+
+
+
+/* Typography */
+:root {
+    font-size: 16px;
+    font-family: monospace;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+pre { 
+    text-align: center;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;    
+}
+
+header {
+    pre.small {
+        font-size: 1.2rem;
+    }
+    pre {
+        font-size: 0.6rem;
+    }
+}
+
+nav.menu li a {
+    font-size: 1.2rem;
+}
+
+.botbox, .listbox, .projectbox, .newsbox  {
+    h2 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+
+.botbox h2, .newsbox h2 {
+    font-size: 1rem;    
+    text-align: left;
+}
+
+.listbox li a {
+    font-size: 1rem;    
+}
+
+.morelink {
+    text-align: center;
+}
+
+/* Day-Night toggle button */
+
+button {
+    background: none;
+    border-radius: 50%;
+    border: none;
+    color: #B58900;
+    cursor: pointer;
+    display: inline;
+    font-size: 25px;
+    font-size: 2.5rem;
+    font: inherit;
+    height: 35px;
+    height: 3.5rem;
+    margin: 0;
+    outline-offset: 0;
+    outline: none;
+    padding: 0px;
+    position: fixed;
+    right: 25px;
+    top: 10px;
+    width: 35px;
+    width: 3.5rem;
+}
+
+/* Header */
+
+header {
+    border-radius: 5px;
+    margin: 2.0rem auto;    
+    margin: 2.0rem auto;    
+    padding: 10px 0 10px 0;
+    padding: 1.0rem 0 1.0rem 0;
+    width: 98%;
+
+    pre.wide, pre.tall {
+        display: none;
+    }
+}
+
+
+/* Nav menus */
+
+nav.menu {
+    display: table;
+    width: 90%;
+    margin: auto;   
+
+    ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        text-align: center;
+        width: 100%;
+    
+        a {
+            height: 3.4rem;
+            display: inline-block;
+            width: 100%;
+            transition: all 0.3s ease-out;
+            border-radius: 5px;
+            width: 98%;
+            padding: 10px 0 10px 0;
+            padding: 1.0rem 0 1.0rem 0;
+            margin: 0.8rem auto;
+        }
+        a:hover {
+            color: white;
+            background-color: blue;
+        }
+        a:after {
+            content: "\00a0\00a0"
+        }
+        a:before {
+            content: "\00a0\00a0"
+        }
+        a:hover:after {
+            content: "\00a0<"
+        }
+        a:hover:before {
+            content: ">\00a0"
+        }
+    }
+}
+
+.listbox, .projectbox, .newsbox  {
+    width: 90%;
+    max-width: 60em;
+    margin: 2rem auto;
+    padding: 1.0rem;
+
+    li a { 
+        padding: 5px 20px;
+        padding: 0.5rem 2.0rem;
+        display: block;
+        width: 100%;
+    }
+}
+
+.botbox, .listbox, .projectbox, .newsbox  {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px; 
+    margin: 2.0rem auto;
+    max-width: 60em;
+    overflow: scroll;
+    padding: 0 0 10px;
+    padding: 0 0 1.0rem;
+    width: 90%;
+
+    h2 {
+        border-bottom-style: solid;
+        border-bottom-width: 2px; 
+        font-family: monospace;
+        margin: 0 0 2.0rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    div {
+        padding: 1rem 1.5rem;
+    }
+
+    nav.nextprev, time {
+        float: right;
+    }
+}
+
+.projectbox {
+    max-width: 85em;
+}
+
+/* Colors */
+/* http://ethanschoonover.com/solarized */
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+body.day {
+    background: #eee8d5;
+    color: #657B83;
+    transition: all 0.3s ease-out;
+
+    header, .listbox {
+        border-color: #cb4b16;
+        background-color: #fdf6e3;
+    }
+    nav li a {
+        background-color: $base3;
+        color: $orange;
+    }
+    nav li a:hover {
+        background-color: $blue;
+        color: $base3;
+    }
+    .botbox, .listbox, .projectbox, .newsbox  {
+        border-color: #cb4b16;
+        background-color: #fdf6e3;
+
+        h2 {
+            border-color: #cb4b16;
+            background-color: #cb4b16;
+            color: #eee8d5;
+
+            nav {
+                color: $base00;
+            }
+            a {
+                color: #eee8d5;
+            }
+            a:hover, a:focus {
+                background-color: inherit;
+                color: #fdf6e3;
+            }
+        }
+    }
+    a:hover {
+        background-color: #eee8d5;
+    }
+    button:hover {
+        background-color: #eee8d5;
+    }
+    #modetoggle:after {
+        content: "☀";
+    }
+}
+
+body.night {
+    background: #002b36;
+    color: #839496;
+    transition: all 0.3s ease-out;
+}
+.night a:hover {
+    background-color: #073642;
+}
+.night button:hover {
+    background-color: #073642;
+}
+.night #modetoggle:after {
+    content: "☽";
+}
+
+.extra {
+    display: none!important;
+}
+
+body {
+    height: 100%;
+    min-height: 100%; 
+    position: relative;
+}
+
+footer {
+    text-align: center;
+    padding: 1.0em;
+    height: 5.0rem;
+    width: 98%;
+    margin: 35rem 0 1rem 0;
+}
+
+nav.mainmenu {
+    position: absolute;
+    bottom: 8.0rem;
+    width: 90%;
+    left: 5%;
+}
+
+
+
+@media only screen and (min-width: 880px) {
+    header  pre.tall {display: block;}
+    header  pre.small {display: none;}
+
+    nav.shortcutmenu {
+        display: none;
+    }
+
+    footer {
+        margin-top: 10px;
+        margin-top: 1.0rem;        
+    }
+
+    nav.mainmenu {
+        position: static;
+        display: table;
+        width: 98%;
+        margin: auto;   
+    
+        ul {
+            display: table-row;
+        }
+
+        li {
+            display: table-cell;
+            text-align: center;
+            padding: 0 0.5rem;
+            width: 150px;
+            width: 15rem;
+        }
+
+        li a {
+            display: inline-block;
+            width: 100%;
+            transition: all 0.3s ease-out;
+        }
+    }
+}
+
+@media only screen and (min-width: 1070px) {
+    header  pre.wide {display: block;}
+    header  pre.tall {display: none;}
+}

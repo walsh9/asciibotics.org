@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<article class="newsbox">
+  <h2><a href="{{url}}">{{ page.title }}</a><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d" }}</time></h2>
+  <div>
+  {{page.content}}
+  </div>
+</article>

@@ -1,6 +1,25 @@
 ---
 layout: default
 ---
-  {% assign post = site.posts.first %}
-  {% assign content = post.content %}
-  {{ content }}
+<h2>Latest News</h2>
+{% assign post = site.posts.first %}
+<article class="newsbox">
+  <h2><a href="{{post.url}}">{{ post.title }}</a><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time></h2>
+  <div>
+  {{post.content}}
+  </div>
+</article>
+
+<h2>Latest Bots</h2>
+{% assign latest_bots = site.bots | sort: 'date' | reverse %}
+{% for bot in latest_bots limit:5 %}
+<article class="botbox">
+  <h2>
+    <a href="{{bot.url}}">#{{ bot.name | upcase }} - {{ bot.nickname }}</a>
+  </h2>
+  <pre>{{ bot.bot | xml_escape }}</pre>
+</article>
+{% endfor %}
+<div class="morelink">
+  <a href="/databank/">More bots in The Databank...</a>
+</div>

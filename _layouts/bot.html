@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% for bot in site.bots  %}
+  {% if bot.url == page.url %}
+    {% unless forloop.first %}
+      {% assign prevurl  = prev.url %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = site.bots[forloop.index] %}
+      {% assign nexturl  = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = bot %}
+{% endfor %}
+
+<article class="botbox">
+  <h2>
+    <a href="{{page.url}}">#{{ page.name | upcase }} - {{ page.nickname }}</a>
+    <nav class="nextprev">
+    {% if prevurl %}<a href="{{prevurl}}" class="prev">◀</a>{% else %}◀{% endif %}
+    {% if nexturl %}<a href="{{nexturl}}" class="nxt">▶</a>{% else %}▶{% endif %}
+    </nav>
+  </h2>
+  <pre>{{ page.bot | xml_escape }}</pre>
+</article>
+
+
+
+<script>
+  document.body.onkeyup = function(e){
+  if (e.keyCode == '37') { window.location = '{{prevurl}}'; }
+  if (e.keyCode == '39') { window.location = '{{nexturl}}'; }
+  };
+</script>
+
