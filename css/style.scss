@@ -185,7 +185,7 @@ nav.menu {
     border-width: 2px; 
     margin: 2.0rem auto;
     max-width: 60em;
-    overflow: scroll;
+    overflow: none;
     padding: 0 0 10px;
     padding: 0 0 1.0rem;
     width: 90%;
@@ -204,6 +204,12 @@ nav.menu {
 
     nav.nextprev, time {
         float: right;
+    }
+
+    pre {
+        overflow: auto;
+        padding: 0 0 5px;
+        padding: 0 0 0.5rem;
     }
 }
 
