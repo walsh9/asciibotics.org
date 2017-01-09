@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
+{% assign bots = site.bots | sort: id %}
 <div class="listbox">
   <h2>Main Production Line</h2>
   <ul>
-  {% for bot in site.bots | sort: id %}
+  {% for bot in bots %}
     {% if bot.name > '000' and bot.name <= '999' %}
         <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
     {% endif %}
@@ -15,7 +16,7 @@ layout: default
 <div class="listbox">
   <h2>Advent 2014</h2>
   <ul>
-  {% for bot in site.bots | sort: id  %}
+  {% for bot in bots %}
     {% if bot.name > 'ad000' and bot.name <= 'ad025' %}
         <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
     {% endif %}
@@ -26,7 +27,7 @@ layout: default
 <div class="listbox">
   <h2>Advent 2015</h2>
   <ul>
-  {% for bot in site.bots | sort: id  %}
+  {% for bot in bots %}
     {% if bot.name > 'ad100' and bot.name <= 'ad125' %}
         <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
     {% endif %}
@@ -34,11 +35,33 @@ layout: default
   </ul>
 </div>
 
-  <div class="listbox">
+<div class="listbox">
+  <h2>Advent 2016</h2>
+  <ul>
+  {% for bot in bots %}
+    {% if bot.name > 'ad200' and bot.name <= 'ad225' %}
+        <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="listbox">
   <h2>Minibot Precursors</h2>
   <ul>
-  {% for bot in site.bots | sort: id  %}
+  {% for bot in bots %}
     {% if bot.name >= 'mrf-000' and bot.name <= 'mrf-fff' %}
+        <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="listbox">
+  <h2>Logobots</h2>
+  <ul>
+  {% for bot in bots %}
+    {% if bot.name >= 'lgo-' and bot.name <= 'lgo-z' %}
         <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
     {% endif %}
   {% endfor %}
