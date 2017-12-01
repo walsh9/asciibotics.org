@@ -18,8 +18,8 @@ layout: default
   <h2>
     <a href="{{page.url}}">#{{ page.name | upcase }} - {{ page.nickname }}</a>
     <nav class="nextprev">
-    {% if prevurl %}<a href="{{prevurl}}" class="prev">◀</a>{% else %}◀{% endif %}
-    {% if nexturl %}<a href="{{nexturl}}" class="nxt">▶</a>{% else %}▶{% endif %}
+    {% if prevurl %}<a href="{{prevurl}}" class="arrow prev">◀</a>{% else %}◀{% endif %}
+    {% if nexturl %}<a href="{{nexturl}}" class="arrow next">▶</a>{% else %}▶{% endif %}
     </nav>
   </h2>
   <pre>{{ page.bot | xml_escape }}</pre>

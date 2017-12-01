@@ -54,6 +54,7 @@ header {
 
 nav.menu li a {
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .botbox, .listbox, .projectbox, .newsbox  {
@@ -74,6 +75,10 @@ nav.menu li a {
 
 .morelink {
     text-align: center;
+}
+
+footer {
+    font-weight: bold;
 }
 
 /* Day-Night toggle button */
@@ -146,21 +151,24 @@ nav.menu {
             padding: 1.0rem 0 1.0rem 0;
             margin: 0.8rem auto;
         }
-        a:hover {
+        a:hover,
+        a:focus {
             color: white;
             background-color: blue;
         }
         a:after {
-            content: "\00a0\00a0"
+            content: "\00a0\00a0";
         }
         a:before {
-            content: "\00a0\00a0"
+            content: "\00a0\00a0";
         }
-        a:hover:after {
-            content: "\00a0<"
+        a:hover:after,
+        a:focus:after {
+            content: "\00a0<";
         }
-        a:hover:before {
-            content: ">\00a0"
+        a:hover:before,
+        a:focus:before {
+            content: ">\00a0";
         }
     }
 }
@@ -266,11 +274,27 @@ body.day {
                 color: $base00;
             }
             a {
-                color: #eee8d5;
+                color: #ffffff;
+                position: relative;
             }
             a:hover, a:focus {
                 background-color: inherit;
-                color: #fdf6e3;
+                color: #ffffff;
+                &:before {
+                    content: ">\00a0";
+                    position: absolute;
+                    left: -15px;
+                }
+            }
+            a.arrow:hover,
+            a.arrow:focus {
+                color: #eee8d5;
+                &:before {
+                    content: none;
+                }
+            }
+            time {
+                color: #ffffff;
             }
         }
     }
@@ -305,7 +329,6 @@ body.night {
 }
 
 body {
-    height: 100%;
     min-height: 100%; 
     position: relative;
 }
