@@ -30,7 +30,7 @@
     }
 
     //attach functions to buttons;
-    document.querySelector("[data-action='toggle-mode']").addEventListener("click", toggleMode);
+    // document.querySelector("[data-action='toggle-mode']").addEventListener("click", toggleMode);
     document.querySelector("[data-action='random-bot']").addEventListener("click", goToRandomBot);
 
 
