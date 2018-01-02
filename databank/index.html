@@ -47,6 +47,17 @@ layout: default
 </div>
 
 <div class="listbox">
+  <h2>Advent 2017</h2>
+  <ul>
+  {% for bot in bots %}
+    {% if bot.name > 'ad300' and bot.name <= 'ad325' %}
+        <li><a href="{{bot.url}}">Model #{{ bot.name | upcase }} - {{ bot.nickname }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="listbox">
   <h2>Minibot Precursors</h2>
   <ul>
   {% for bot in bots %}
